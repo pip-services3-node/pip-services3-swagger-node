@@ -132,6 +132,7 @@ Launch the microservice and open the browser to open the Open API specification 
 
 Then open the Swagger UI using the link [http://localhost:8080/swagger].
 The result shall look similar to the picture below.
+
 <img src="swagger-ui.png"/>
 
 ## Develop
