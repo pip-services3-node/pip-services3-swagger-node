@@ -52,7 +52,7 @@ export class MyRestService extends RestService {
 }
 ```
 
-The Open API specification for the service shall be preprepared either manually
+The Open API specification for the service shall be prepared either manually
 or using [Swagger Editor](https://editor.swagger.io/)
 ```yaml
 openapi: '3.0.2'
