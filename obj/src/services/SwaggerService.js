@@ -67,12 +67,25 @@ class SwaggerService extends pip_services3_rpc_node_1.RestService {
             url = url + '/';
         res.redirect(301, url + 'index.html', () => { });
     }
+    composeSwaggerRoute(baseRoute, route) {
+        if (baseRoute != null && baseRoute != "") {
+            if (route == null || route == "")
+                route = "/";
+            if (!route.startsWith("/"))
+                route = "/" + route;
+            if (!baseRoute.startsWith("/"))
+                baseRoute = "/" + baseRoute;
+            route = baseRoute + route;
+        }
+        return route;
+    }
     registerOpenApiSpec(baseRoute, swaggerRoute) {
         if (swaggerRoute == null)
             super.registerOpenApiSpec(baseRoute);
         else {
+            let route = this.composeSwaggerRoute(baseRoute, swaggerRoute);
             baseRoute = baseRoute || "default";
-            this._routes[baseRoute] = swaggerRoute;
+            this._routes[baseRoute] = route;
         }
     }
     register() {

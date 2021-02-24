@@ -69,6 +69,7 @@ export class SwaggerService extends RestService implements ISwaggerService {
         }
         content = content.replace('[/*urls*/]', JSON.stringify(urls));
 
+        
         res.header('Content-Type', 'text/html');
         res.sendRaw(content);
     }
@@ -79,12 +80,27 @@ export class SwaggerService extends RestService implements ISwaggerService {
         res.redirect(301, url + 'index.html', () => {});
     }
 
+    private composeSwaggerRoute(baseRoute: string, route: string): string {
+        if (baseRoute != null && baseRoute != "") {
+            if (route == null || route == "")
+                route = "/";
+            if (!route.startsWith("/"))
+                route = "/" + route;
+            if (!baseRoute.startsWith("/"))
+                baseRoute = "/" + baseRoute;
+            route = baseRoute + route;
+        }
+
+        return route;
+    }
+
     public registerOpenApiSpec(baseRoute: string, swaggerRoute?: string): void {
         if (swaggerRoute == null)
             super.registerOpenApiSpec(baseRoute);
         else {
+            let route = this.composeSwaggerRoute(baseRoute, swaggerRoute);
             baseRoute = baseRoute || "default";
-            this._routes[baseRoute] = swaggerRoute;
+            this._routes[baseRoute] = route;
         }
     }
 

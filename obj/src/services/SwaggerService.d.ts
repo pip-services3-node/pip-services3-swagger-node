@@ -10,6 +10,7 @@ export declare class SwaggerService extends RestService implements ISwaggerServi
     private getSwaggerFile;
     private getIndex;
     private redirectToIndex;
+    private composeSwaggerRoute;
     registerOpenApiSpec(baseRoute: string, swaggerRoute?: string): void;
     register(): void;
 }
