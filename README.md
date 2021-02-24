@@ -47,7 +47,7 @@ export class MyRestService extends RestService {
             this.greeting
         );
         
-        this.registerOpenApiSpecFromFile(__dirname + '/myservice.yml');
+        this.registerOpenApiSpecFromFile('./src/services/myservice.yml');
     }
 }
 ```
