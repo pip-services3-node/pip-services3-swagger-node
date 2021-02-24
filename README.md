@@ -128,9 +128,9 @@ export class MyProcess extends ProcessContainer {
 ```
 
 Launch the microservice and open the browser to open the Open API specification at
-[http://localhost:8080/greeting/swagger]
+[http://localhost:8080/greeting/swagger](http://localhost:8080/greeting/swagger)
 
-Then open the Swagger UI using the link [http://localhost:8080/swagger].
+Then open the Swagger UI using the link [http://localhost:8080/swagger](http://localhost:8080/swagger).
 The result shall look similar to the picture below.
 
 <img src="swagger-ui.png"/>
