@@ -43,8 +43,8 @@
     },
     "dependencies": {
         "pip-services3-commons-node": "^3.0.0",
-        "pip-services3-components-node": "^3.0.0",
-        "pip-services3-rpc-node": "^3.5.0"
+        "pip-services3-components-node": "^3.3.0",
+        "pip-services3-rpc-node": "^3.9.0"
     },
     "devDependencies": {
         "@types/async": "^2.0.0",
